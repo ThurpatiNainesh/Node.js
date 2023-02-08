@@ -1,5 +1,14 @@
 // insertmany
-db.person.insertmany()
+db.person.insertmany([{
+    name:"nine",
+    last:"joe"
+},{
+    name:"joke",
+    last:"joe"
+},{
+    name:"joke",
+    last:"joe"
+}])
 // act a find without any aggregation stages
 db.person.aggregate([])
 

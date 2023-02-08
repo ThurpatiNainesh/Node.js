@@ -19,7 +19,7 @@ const User = new mongoose.model("User",userSchema)
 // Routes
 app.post("/create",async function (req, res) {
     const newUser = new User({
-        username:req.body.username,
+        name:req.body.username,
         email:req.body.email,
         password:req.body.password,
     })

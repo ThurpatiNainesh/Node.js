@@ -23,7 +23,25 @@ function getMoneyBack(money){
   })
 }
 
-let x=getMoneyBack(1200).then((money)=>{
+let x=getMoneyBack(1234).then((money)=>{
   console.log(money)
+}).catch(()=>{
+  console.log(console.log("pease provide Number!"))
 })
 console.log(x)
+
+// // find each person with a last name matching 'Ghost'
+// const query = Person.findOne({ 'name.last': 'Ghost' });
+
+// // selecting the `name` and `occupation` fields
+// query.select('name occupation');
+
+// // execute the query at a later time
+// query.exec(function (err, person) {
+//   if (err) return handleError(err);
+//   // Prints "Space Ghost is a talk show host."
+//   console.log('%s %s is a %s.', person.name.first, person.name.last,
+//     person.occupation);
+// });
+
+ 
