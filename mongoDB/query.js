@@ -147,3 +147,48 @@ const Person = mongoose.model('Person', personSchema);
 })()
 // upser is for new field create
 db.student.updateMany({age: 18}, {$set: {eligible: false}}, {upsert: true})
+
+db.student.inserOne({name:"lee"})
+db.student.insertMany([{},{}])
+// only return age and name
+db.student.find({name:"michale"},{age:1,neme:1})
+// except age return everything
+db.student.find({name:"michale"},{age:0}) 
+
+db.student.find({name:{$eq:"sally"}})
+db.student.find({name:{$neq:"sally"}})
+db.student.find({age:{$gt:20}})
+db.student.find({age:{$gte:20}})
+db.student.find({age:{$lt:30}})
+db.student.find({age:{$lte:30}})
+db.student.find({age:{$gt:20,$lt:30}})
+db.student.find({name:{$in:["sally","kally"]}})
+db.student.find({name:{$nin:["sally","kally"]}})
+db.student.find({age:{$exists:true}})
+db.student.find({age:{$exists:false}})
+db.student.find({age:{$exists:true}})
+db.student.find({$and:[{age:30},{name:"kally"}]})
+db.student.find({$or:[{age:30},{name:"kally"}]})
+db.student.find({age:{$not:{$gt:40}}})
+// expression
+db.student.find({$expr:{$gt:["dept","balance"]}})
+// nested objects
+db.student.find({"address.street":"12v max gghgh"})
+// update
+db.student.updateOne({age:40},{$set:{age:50}})
+// remove
+db.student.updateOne({age:40},{$unset:{age:""}})
+db.student.updateOne({age:40},{$push:{hobbies:"tenies"}})
+db.student.updateOne({age:40},{$pull:{hobbies:"tenies"}})
+db.student.updateMany({age:{$exists:true}},{$unset:{address:""}})
+// replace
+db.student.replaceOne({age:40},{name:90})
+// delete
+db.student.deleteOne({age:40})
+db.student.deleteManty({age:40})
+
+
+
+
+
+

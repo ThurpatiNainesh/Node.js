@@ -1,3 +1,9 @@
+
+
+
+
+
+
 const convertedPassword = bcrypt.hashSync(password, saltRounds);
         data.password = convertedPassword
         
